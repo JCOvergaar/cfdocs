@@ -8,7 +8,31 @@
 	"description":"Formats a time value using US English time formatting conventions. If no mask is specified, returns a time value using the hh:mm tt format. For international time formatting, see LSTimeFormat.",
 	"params": [
 		{"name":"time","description":"A date\/time value or string to convert","required":true,"default":"","type":"date","values":[]},
-		{"name":"mask","description":"Masking characters that determine the format.\n `h`,`hh`,`H`,`HH`: Hours\n `m`,`mm`: Minutes\n`s`,`ss`: Seconds\n `l`: Milliseconds\n`t`: A or P\n`tt`: AM or PM\n`z`: Time zone in literal format, for example GMT\n`Z`: Time zone in hours offset (RFC822), for example +0400\n`X`,`XX`,`XXX`: Time zone in hourse of offset in ISO 8601 format\n`\"short\"`: `h:mm tt`\n`\"medium\"`: `h:mm:ss tt`","required":false,"default":"hh:mm tt","type":"string","values":["short","medium","long","full"]}
+		{"name":"mask","description":"Masking characters that determine the format.\n 
+		h: hours; no leading zero for single-digit hours (12-hour clock)
+hh: hours; leading zero for single-digit hours (12-hour clock)
+H: hours; no leading zero for single-digit hours (24-hour clock)
+HH: hours; leading zero for single-digit hours (24-hour clock)
+n: minutes; no leading zero for single-digit minutes
+nn: minutes; a leading zero for single-digit minutes
+s: seconds; no leading zero for single-digit seconds
+ss: seconds; leading zero for single-digit seconds
+k: hour in day (1-24)
+K: hour in AM/PM (0-11)
+l or L: milliseconds, with no leading zeros
+t: one-character time marker string, such as A or P
+tt: multiple-character time marker string, such as AM or PM
+short: equivalent to h:mm tt
+medium: equivalent to h:mm:ss tt
+long: medium followed by three-letter time zone; as in, 2:34:55 PM EST
+full: same as long
+z: Time zone in literal format, for example, GMT
+Z: Time zone in hours of offset (RFC 822 TimeZone), for example, +0530
+X: Time zone in hours of offset in ISO 8601 format. The following are the three ways of using 'X':
+         X: +05
+         XX: +0530
+         XXX: +05:30
+		 \n`\"short\"`: `h:mm tt`\n`\"medium\"`: `h:mm:ss tt`","required":false,"default":"hh:mm tt","type":"string","values":["short","medium","long","full"]}
 
 	],
 	"engines": {
